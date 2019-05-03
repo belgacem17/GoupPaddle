@@ -22,22 +22,29 @@ function connect() {
     if (("admin" == email) && ("admin" == pss)) {
        
         console.log(pss)
+   
+            userconnect.email=email;
+    userconnect.pss=pss;
+    localStorage.setItem('userconnect',JSON.stringify(userconnect))
+    location.href = '../index.html';
     }else{
         Consult()
  
     for (i = 0; i < ERP.Manager.length; i++) {
        
         if (( ERP.Manager[i].email == email) && ( ERP.Manager[i].passwrd == pss)) {
-            location.href = '../index.html';
-            console.log(ERP.Manager)
+            
+            console.log("hghgh"+ERP.Manager)
+     
+            userconnect.email=email;
+    userconnect.pss=pss;
+    localStorage.setItem('userconnect',JSON.stringify(userconnect))
+    location.href = '../index.html';
         }
         
     }
     }
-    userconnect.email=email;
-    userconnect.pss=pss;
-    localStorage.setItem('userconnect',JSON.stringify(userconnect))
-    location.href = '../index.html';
+    
 
 }
 function Consult() {
